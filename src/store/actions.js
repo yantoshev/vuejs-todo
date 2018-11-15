@@ -1,6 +1,6 @@
 const actions = {
 
-    loadData({ commit }, items) {
+    loadData({ commit }) {
         commit('UPDATE_DATA')
     },
 

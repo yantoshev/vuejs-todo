@@ -1,40 +1,21 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <AddItem />
-        </div>
-        <div class="card-body p0">
-          <TodoItem 
-              v-for="(item, index) in items"
-              :key="index"
-              :item="item" />
-          <h5 v-if="items.length === 0">No items!</h5>
-        </div>
-      </div>
-    </div>
-  </div>
+  <el-main>
+    <el-row :gutter="0">
+        <el-col :span="12" :offset="6" class="todo">
+            <Todo/>
+        </el-col>
+    </el-row>
+  </el-main>
 </template>
 
 <script>
-import AddItem from '@/components/AddItem'
-import TodoItem from '@/components/TodoItem'
+import Todo from '@/components/Todo'
 
 export default {
   name: 'Home',
   components: {
-    AddItem,
-    TodoItem
+    Todo
   },
-  created() {
-    this.$store.dispatch('loadData')
-  },
-  computed: {
-    items () {
-      return this.$store.state.todos
-    },
-  }
 }
 </script>
 

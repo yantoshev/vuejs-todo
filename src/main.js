@@ -2,9 +2,10 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 import router from './router'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
 
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 new Vue({
